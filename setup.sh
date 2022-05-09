@@ -14,7 +14,7 @@ git clone https://github.com/hyperledger/fabric-ca.git
 git clone -b release-2.2 https://github.com/hyperledger/fabric-samples.git
 
 rm -rf fabric/images/*
-cp -R images-fabric/* fabric/images
+cp -R images-fabric-main/* fabric/images
 
 rm -rf fabric-ca/images/*
 cp -R images-fabric-ca/* fabric-ca/images
