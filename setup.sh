@@ -20,16 +20,20 @@ rm -rf fabric-ca/images/*
 cp -R images-fabric-ca/* fabric-ca/images
 
 cd fabric/
+go mod vendor
 make docker-clean
 make docker
 make native
-# sudo cp build/bin/* /usr/local/bin/
-export PATH=$(pwd)/bin:$PATH
+sudo cp build/bin/* /usr/local/bin/
+# export PATH=$(pwd)/bin:$PATH
 cd ..
 
 cd fabric-ca/
 make docker-clean
 make docker
+make native
+sudo cp bin/* /usr/local/bin/
+# export PATH=$(pwd)/bin:$PATH
 cd ..
 
 elif [ "$ARCH" = "amd64" ]; then
